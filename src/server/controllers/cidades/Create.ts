@@ -1,6 +1,7 @@
 import { RequestHandler } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import * as yup from 'yup';
+import { validation } from '../../../shared/middlewares';
 interface ICidade {
 
     nome: string;
@@ -29,6 +30,10 @@ export const createBodyValidator: RequestHandler = async (req, res, next) => {
 
     }
 };
+
+
+
+export const createValidation = validation();
 export const create: RequestHandler = async (req, res) => {
 
 
